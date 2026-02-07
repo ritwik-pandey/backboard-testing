@@ -1,132 +1,168 @@
 import csv
 import asyncio
+import pdfplumber
 from backboard import BackboardClient
-from pypdf import PdfReader
 
-# 1. SETUP: Define your "Target Fields"
-target_fields = [
-    # A. Income Statement
-    "revenue_total", "cost_of_revenue", "gross_profit", 
-    "operating_expenses_total", "employee_costs", "selling_marketing_expense",
-    "rnd_expense", "general_admin_expense", "operating_income", 
-    "interest_expense", "tax_expense", "net_income",
-
-    # B. Cash Flow
-    "cash_from_operations", "capital_expenditure", "cash_from_investing",
-    "cash_from_financing", "dividends_paid", "net_change_in_cash",
-    "cash_end_period",
-
-    # C. Balance Sheet
-    "cash_and_equivalents", "short_term_investments", "total_current_assets",
-    "total_assets", "short_term_debt", "long_term_debt", 
-    "total_liabilities", "shareholders_equity",
-
-    # D. Operational Metrics
-    "employee_count", "avg_employee_cost", "branch_count", 
-    "customer_count", "segment_revenue"
+# 1. SETUP: Your Schema
+metrics_schema = [
+    {"metric_name": "revenue_total", "aliases": ["total revenue", "net sales", "turnover", "operating revenue"]},
+    {"metric_name": "cost_of_revenue", "aliases": ["cost of goods sold", "cogs", "cost of sales"]},
+    {"metric_name": "gross_profit", "aliases": ["gross profit", "gross margin"]},
+    {"metric_name": "operating_expenses_total", "aliases": ["total operating expenses", "opex"]},
+    {"metric_name": "net_income", "aliases": ["net income", "net profit", "loss for the period"]},
+    {"metric_name": "cash_from_operations", "aliases": ["net cash from operating", "cash flow from operations"]},
+    {"metric_name": "capital_expenditure", "aliases": ["purchase of property", "capex", "additions to property"]},
+    {"metric_name": "cash_end_period", "aliases": ["cash and cash equivalents at end", "ending cash balance"]},
+    {"metric_name": "total_assets", "aliases": ["total assets"]},
+    {"metric_name": "total_liabilities", "aliases": ["total liabilities"]},
+    {"metric_name": "shareholders_equity", "aliases": ["total equity", "shareholders' equity"]},
+    {"metric_name": "employee_count", "aliases": ["employees", "headcount", "full-time employees"]}
 ]
 
-# 2. EXTRACT TEXT
-def get_pdf_text(pdf_path):
-    print(f"Reading PDF from: {pdf_path}")
-    reader = PdfReader(pdf_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text()
-    return text
-
-# --- HELPER: CHUNK TEXT ---
-def chunk_text(text, chunk_size=1500):
-    return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
-
-# 3. ASYNC MAIN FUNCTION (DEBUGGED VERSION)
-async def main():
-    # --- CHECK THIS PATH ---
-    pdf_path = "/Users/anubhavkayal/Data Scrapping/financial_report_Q3.pdf"
+# 2. EXTRACT TEXT + TABLES (The Secret Sauce)
+def get_structured_text(pdf_path):
+    print(f"📖 Reading PDF layout: {pdf_path}")
+    full_context = ""
     
-    # [DIAGNOSIS 1] Check if PDF is actually readable
     try:
-        raw_financial_text = get_pdf_text(pdf_path)
-        print(f"\n--- PDF DIAGNOSTIC ---")
-        print(f"Total Characters Extracted: {len(raw_financial_text)}")
-        print(f"First 500 chars preview:\n{raw_financial_text[:500]}")
-        print(f"----------------------\n")
+        with pdfplumber.open(pdf_path) as pdf:
+            for i, page in enumerate(pdf.pages):
+                # A. Extract Tables specifically
+                tables = page.extract_tables()
+                if tables:
+                    full_context += f"\n--- TABLE DATA (PAGE {i+1}) ---\n"
+                    for table in tables:
+                        # Convert table to CSV format string which LLMs understand easily
+                        for row in table:
+                            # Filter out None values and join
+                            clean_row = [str(cell).replace('\n', ' ') if cell else "" for cell in row]
+                            full_context += " | ".join(clean_row) + "\n"
+                
+                # B. Extract Regular Text (for things not in tables like 'Employee Count')
+                text = page.extract_text()
+                if text:
+                    full_context += f"\n--- TEXT DATA (PAGE {i+1}) ---\n{text}\n"
+                    
+    except Exception as e:
+        print(f"❌ Error reading PDF: {e}")
+        return ""
         
-        if len(raw_financial_text.strip()) < 100:
-            print("❌ CRITICAL ERROR: The PDF text is empty or too short!")
-            print("This PDF is likely a SCANNED IMAGE. 'pypdf' cannot read images.")
-            print("You need to use an OCR tool or a text-based PDF.")
-            return
+    return full_context
 
-    except FileNotFoundError:
-        print(f"ERROR: Could not find file at {pdf_path}")
+# 3. ASYNC MAIN
+async def main():
+    pdf_path = "/Users/anubhavkayal/Data Scrapping/reportF.pdf"
+    
+    # Get structured context
+    structured_text = get_structured_text(pdf_path)
+    
+    if len(structured_text) < 50:
+        print("❌ CRITICAL: Extracted text is empty. OCR might be bad or file is encrypted.")
         return
 
-    print("PDF valid. Initializing Backboard...")
+    # Initialize Backboard
+    # SECURITY NOTE: Replace with your actual key
+    client = BackboardClient(api_key="API KEY HERE") 
 
-    # Initialize Client
-    client = BackboardClient(api_key="YOUR_BACKBOARD_API_KEY") 
-
-    # Create Assistant
-    print("Creating Assistant...")
+    print("🤖 Creating Assistant...")
     assistant = await client.create_assistant(
-        name="Financial Analyst",
-        system_prompt="You are a helpful financial analyst. You have access to a financial report in your memory. Use it to answer questions. If the value is not explicitly stated, try to infer it from context, or return 'N/A' only as a last resort."
+        name="Financial Auditor",
+        system_prompt="""
+        You are an expert financial auditor. 
+        You are given raw text and structured table data from a PDF.
+        Your goal is to find specific financial metrics.
+        
+        RULES:
+        1. Context is provided as 'TABLE DATA' (rows separated by |) and 'TEXT DATA'.
+        2. When searching for a value, prioritize the 'Current Period' or '2023/2024' column if multiple years exist.
+        3. Return ONLY the numerical value formatted as a standard number (e.g., 1000000).
+        4. If the value is strictly not present, return 'N/A'.
+        """
     )
-    print(f"Assistant Created: {assistant.assistant_id}")
-
+    
     # Create Thread
-    print("Creating Thread...")
     thread = await client.create_thread(assistant_id=assistant.assistant_id)
-    print(f"Thread Created: {thread.thread_id}")
-
-    # Upload Memory
-    print("Splitting text into chunks...")
-    text_chunks = chunk_text(raw_financial_text, chunk_size=1500)
     
-    print(f"Uploading {len(text_chunks)} memory chunks...")
-    for i, chunk in enumerate(text_chunks):
-        # We add a tiny marker so we know which chunk is which
-        print(f"  - Uploading chunk {i+1}/{len(text_chunks)}...")
-        await client.add_memory(
-            assistant_id=assistant.assistant_id,
-            content=chunk
+    # --- CONTEXT STUFFING ---
+    # We send the text to the thread so the AI "sees" it before we ask questions.
+    # Note: If text is > 20k chars, we might need to split it, but let's try this first.
+    print(f"📤 Uploading document context ({len(structured_text)} chars)...")
+    
+    # Chunking specifically for the message limit (not memory limit)
+    chunk_size = 6000
+    chunks = [structured_text[i:i+chunk_size] for i in range(0, len(structured_text), chunk_size)]
+    
+    for i, chunk in enumerate(chunks):
+        await client.add_message(
+            thread_id=thread.thread_id,
+            content=f"DOCUMENT PART {i+1}:\n{chunk}"
         )
-        await asyncio.sleep(0.2)
-    
-    print("All memory uploaded.")
-    
-    # [DIAGNOSIS 2] The Indexing Nap
-    print("💤 Waiting 20 seconds for Backboard to index the data...")
-    await asyncio.sleep(20)
-    print("Wake up! Starting extraction...")
+        await asyncio.sleep(0.5)
 
     extracted_data = {}
+    print("🔍 Extracting metrics...")
 
-    # Loop through fields
-    for field in target_fields:
-        prompt = f"Search the uploaded financial document memory for '{field}'. Return ONLY the numerical value. If not found, return 'N/A'."
+    # OPTIMIZATION: Ask for multiple fields at once to save time/tokens
+    # We group fields into batches of 4
+    batch_size = 4
+    for i in range(0, len(metrics_schema), batch_size):
+        batch = metrics_schema[i:i+batch_size]
         
-        response = await client.add_message(
-            thread_id=thread.thread_id,
-            content=prompt
-        )
+        # Build a composite prompt
+        fields_str = ""
+        for item in batch:
+            fields_str += f"- {item['metric_name']} (Look for: {', '.join(item['aliases'])})\n"
+            
+        prompt = f"""
+        Extract values for the following metrics from the document context provided above.
         
-        if hasattr(response, 'content'):
-            value = response.content.strip()
-        else:
-            value = str(response).strip()
-
-        extracted_data[field] = value
-        print(f"Found {field}: {value}")
+        METRICS TO FIND:
+        {fields_str}
+        
+        OUTPUT FORMAT:
+        Return a JSON object with the metric names as keys. 
+        Example: {{"revenue_total": "1500000", "cost_of_revenue": "N/A"}}
+        Do not include markdown formatting like ```json. Just the raw JSON string.
+        """
+        
+        print(f"   Requesting batch: {[b['metric_name'] for b in batch]}...")
+        
+        try:
+            response = await client.add_message(
+                thread_id=thread.thread_id,
+                content=prompt
+            )
+            
+            content = getattr(response, 'content', str(response)).strip()
+            
+            # Clean up JSON (sometimes AI adds markdown)
+            content = content.replace("```json", "").replace("```", "").strip()
+            
+            # Parse the JSON response
+            import json
+            try:
+                data = json.loads(content)
+                extracted_data.update(data)
+                print(f"   ✅ Received: {data}")
+            except json.JSONDecodeError:
+                print(f"   ⚠️ JSON Parse Error. Raw response: {content}")
+                # Fallback: Mark these as N/A if parsing fails
+                for item in batch:
+                    extracted_data[item['metric_name']] = "Error"
+                    
+        except Exception as e:
+            print(f"❌ API Error: {e}")
 
     # Save to CSV
-    output_filename = 'financial_data.csv'
-    with open(output_filename, 'w', newline='') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=target_fields)
+    # Ensure all fields are present (even if missed by AI)
+    final_row = {field['metric_name']: extracted_data.get(field['metric_name'], "N/A") for field in metrics_schema}
+    
+    with open('financial_data.csv', 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=[i['metric_name'] for i in metrics_schema])
         writer.writeheader()
-        writer.writerow(extracted_data)
+        writer.writerow(final_row)
+        
+    print("DONE! Check financial_data.csv")
 
-    print(f"Done! Data saved to {output_filename}")
 if __name__ == "__main__":
     asyncio.run(main())
