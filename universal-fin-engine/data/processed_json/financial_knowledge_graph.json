@@ -1,0 +1,2143 @@
+[
+    {
+        "document_id": "Account 8.xlsx",
+        "status": "Review Required",
+        "ai_metadata": {
+            "error": "Expecting value: line 1 column 1 (char 0)",
+            "source": "Backboard_Skipped"
+        },
+        "summary": {
+            "total_debit": 1703574.32,
+            "total_credit": 1729211.2599999998,
+            "record_count": 303,
+            "closing_balance": 350.0
+        },
+        "validation_flags": {
+            "balance_continuity": false,
+            "error_count": 21
+        },
+        "transactions": [
+            {
+                "date": NaN,
+                "description": "OPENING BALANCE",
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 2852.33
+            },
+            {
+                "date": "01-03-2025",
+                "description": "IMPS/P2A/506015167451/RAJESHSA/Remitter/t est/9198353064677139000",
+                "debit": 0.0,
+                "credit": 1.0,
+                "balance": 2853.33
+            },
+            {
+                "date": "01-03-2025",
+                "description": "IMPS/P2A/506015169091/RAJESHSA/Remitter/ Finalamo/9198353064677139000",
+                "debit": 0.0,
+                "credit": 12678.0,
+                "balance": 15531.33
+            },
+            {
+                "date": "01-03-2025",
+                "description": "UPI/P2A/104678775956/MD SARFARAZ ALAM /Paymen/INDUSIND BANK LIMITE",
+                "debit": 2500.0,
+                "credit": 0.0,
+                "balance": 13031.33
+            },
+            {
+                "date": "01-03-2025",
+                "description": "MPR008211389449 EMI 01-03-2025",
+                "debit": 8294.0,
+                "credit": 0.0,
+                "balance": 4737.33
+            },
+            {
+                "date": "02-03-2025",
+                "description": "UPI/P2M/073026025192/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 4717.33
+            },
+            {
+                "date": "04-03-2025",
+                "description": "UPI/P2A/106081313424/FAIZ ALA/BANK OF B/Payment/",
+                "debit": 0.0,
+                "credit": 3890.0,
+                "balance": 8607.33
+            },
+            {
+                "date": "04-03-2025",
+                "description": "UPI/P2A/980314460395/MOHD KAMIL /Paymen/Kotak Mahindra Bank",
+                "debit": 850.0,
+                "credit": 0.0,
+                "balance": 7757.33
+            },
+            {
+                "date": "04-03-2025",
+                "description": "UPI/P2A/506381265412/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 14280.0,
+                "balance": 22037.33
+            },
+            {
+                "date": "04-03-2025",
+                "description": "UPI/P2M/499941051523/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 22009.33
+            },
+            {
+                "date": "04-03-2025",
+                "description": "UPI/P2A/438691316229/FAIZ ALA/BANK OF B/Payment/",
+                "debit": 0.0,
+                "credit": 30000.0,
+                "balance": 52009.33
+            },
+            {
+                "date": "05-03-2025",
+                "description": "UPI/P2M/108706841951/PhonePe /Paymen/YES BANK LIMITED YBS",
+                "debit": 25646.0,
+                "credit": 0.0,
+                "balance": 26363.33
+            },
+            {
+                "date": "05-03-2025",
+                "description": "UPI/P2M/543903240048/Ubais /Salon/YES BANK LIMITED YBS",
+                "debit": 60.0,
+                "credit": 0.0,
+                "balance": 26303.33
+            },
+            {
+                "date": "05-03-2025",
+                "description": "ATM-CASH/+YBL DLF PHASE/GURGAON/050325",
+                "debit": 10000.0,
+                "credit": 0.0,
+                "balance": 16303.33
+            },
+            {
+                "date": "05-03-2025",
+                "description": "ATM-CASH/+YBL DLF PHASE/GURGAON/050325",
+                "debit": 10000.0,
+                "credit": 0.0,
+                "balance": 6303.33
+            },
+            {
+                "date": "05-03-2025",
+                "description": "UPI/P2A/325280590561/MD FAISAL ALAM /Paymen/State Bank Of India",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 4303.33
+            },
+            {
+                "date": "06-03-2025",
+                "description": "UPI/P2M/636553798275/GruBox /GruBox/AIRTEL PAYMENTS BANK",
+                "debit": 121.0,
+                "credit": 0.0,
+                "balance": 4182.33
+            },
+            {
+                "date": "06-03-2025",
+                "description": "UPI/P2M/054492303799/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 27.0,
+                "credit": 0.0,
+                "balance": 4155.33
+            },
+            {
+                "date": "06-03-2025",
+                "description": "UPI/P2M/225668646042/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 1.0,
+                "credit": 0.0,
+                "balance": 4154.33
+            },
+            {
+                "date": "07-03-2025",
+                "description": "UPI/P2M/962320539213/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 4034.33
+            },
+            {
+                "date": "07-03-2025",
+                "description": "UPI/P2M/503042054156/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 261.44,
+                "credit": 0.0,
+                "balance": 3772.89
+            },
+            {
+                "date": "08-03-2025",
+                "description": "UPI/P2M/800028807382/ZOMATO LIMITED /UPIInt/ICICI Bank",
+                "debit": 200.8,
+                "credit": 0.0,
+                "balance": 3572.09
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "08-03-2025",
+                "description": "UPI/P2M/907928657869/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 136.49,
+                "credit": 0.0,
+                "balance": 3435.6
+            },
+            {
+                "date": "08-03-2025",
+                "description": "UPI/P2M/054782274206/Metro Walkers 1 /Paymen/YES BANK LIMITED YBS",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 3415.6
+            },
+            {
+                "date": "09-03-2025",
+                "description": "UPI/P2M/487546565041/Blinkit /Blinki/AIRTEL PAYMENTS BANK",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 3165.6
+            },
+            {
+                "date": "10-03-2025",
+                "description": "UPI/P2M/899014637573/Zepto Marketplace Pri/Paymen/AXIS BANK",
+                "debit": 316.09,
+                "credit": 0.0,
+                "balance": 2849.51
+            },
+            {
+                "date": "10-03-2025",
+                "description": "UPI/P2A/615889199607/FAIZ ALAM /Paymen/BANK OF BARODA",
+                "debit": 2500.0,
+                "credit": 0.0,
+                "balance": 349.51
+            },
+            {
+                "date": "10-03-2025",
+                "description": "UPI/P2M/289264521689/BharatPe Merchant /Tea/YesBank Yespay",
+                "debit": 15.0,
+                "credit": 0.0,
+                "balance": 334.51
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2M/330840775020/Zomato Online Order /Zomato/AIRTEL PAYMENTS BANK",
+                "debit": 148.5,
+                "credit": 0.0,
+                "balance": 186.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "NEFT/SBIN525070746576/EMPLOYEE PROVIDENT FUND ORGA/STATE BANK OF INDIA//URGENT/RS0000013380000//BUL",
+                "debit": 0.0,
+                "credit": 133800.0,
+                "balance": 133986.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2A/367480706870/BUSHRA SH/BANK OF I/Payment/",
+                "debit": 0.0,
+                "credit": 143.0,
+                "balance": 134129.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2A/576372838048/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 1432.0,
+                "credit": 0.0,
+                "balance": 132697.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2A/501789712923/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 3000.0,
+                "credit": 0.0,
+                "balance": 129697.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2M/543608785030/CRED Club /paymen/AXIS BANK",
+                "debit": 12373.0,
+                "credit": 0.0,
+                "balance": 117324.01
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2M/079273864311/Zomato Online Order /Zomato/AIRTEL PAYMENTS BANK",
+                "debit": 341.79,
+                "credit": 0.0,
+                "balance": 116982.22
+            },
+            {
+                "date": "11-03-2025",
+                "description": "UPI/P2M/037045397778/PRAKASH CHAND KUMHAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 116954.22
+            },
+            {
+                "date": "12-03-2025",
+                "description": "UPI/P2A/856291994176/FAIZ ALAM /Paymen/State Bank Of India",
+                "debit": 500.0,
+                "credit": 0.0,
+                "balance": 116454.22
+            },
+            {
+                "date": "12-03-2025",
+                "description": "UPI/P2M/777467555153/Mohd Kamil /Paymen/YES BANK LIMITED YBS",
+                "debit": 650.0,
+                "credit": 0.0,
+                "balance": 115804.22
+            },
+            {
+                "date": "13-03-2025",
+                "description": "UPI/P2M/835468718888/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 259.0,
+                "credit": 0.0,
+                "balance": 115545.22
+            },
+            {
+                "date": "13-03-2025",
+                "description": "UPI/P2M/202283163245/PRAKASH CHAND KUMHAR/Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 115517.22
+            },
+            {
+                "date": "13-03-2025",
+                "description": "UPI/P2A/734464586364/MD FAISAL ALAM SO RAF/Paymen/BANK OF BARODA",
+                "debit": 20000.0,
+                "credit": 0.0,
+                "balance": 95517.22
+            },
+            {
+                "date": "14-03-2025",
+                "description": "UPI/P2M/031594097767/Zepto /Paymen/ICICI Bank",
+                "debit": 166.0,
+                "credit": 0.0,
+                "balance": 95351.22
+            },
+            {
+                "date": "14-03-2025",
+                "description": "UPI/P2A/507329533630/Zepto/ICICI Ban/refund- r/",
+                "debit": 0.0,
+                "credit": 166.0,
+                "balance": 95517.22
+            },
+            {
+                "date": "14-03-2025",
+                "description": "UPI/P2M/543914273281/Zepto /paymen/AXIS BANK",
+                "debit": 166.0,
+                "credit": 0.0,
+                "balance": 95351.22
+            },
+            {
+                "date": "14-03-2025",
+                "description": "UPI/P2M/507381560803/Dreamplug Service Pri/paymen/AXIS BANK",
+                "debit": 942.36,
+                "credit": 0.0,
+                "balance": 94408.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/112820130352/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 363.0,
+                "credit": 0.0,
+                "balance": 94045.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "NEFT/CITIN25534606372/GLOBEOP FINANCIAL SERV (IND)/CITI BANK/MAR 25 BONUS",
+                "debit": 0.0,
+                "credit": 35640.0,
+                "balance": 129685.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/855885943905/WWW AIRTEL IN /Prepai/HDFC BANK LTD",
+                "debit": 649.0,
+                "credit": 0.0,
+                "balance": 129036.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/622374460815/919560281505 /Paymen/TRANSCORP INTERNATIO",
+                "debit": 57.0,
+                "credit": 0.0,
+                "balance": 128979.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2A/147780377240/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 126979.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2A/669219525466/Neeraj Tripathi /Paymen/AIRTEL PAYMENTS BANK",
+                "debit": 200.0,
+                "credit": 0.0,
+                "balance": 126779.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/670264017969/KULWANT SINGH /Paymen/YES BANK LIMITED YBS",
+                "debit": 480.0,
+                "credit": 0.0,
+                "balance": 126299.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/260422670188/MD GULSHER /Paymen/YES BANK LIMITED YBS",
+                "debit": 60.0,
+                "credit": 0.0,
+                "balance": 126239.86
+            },
+            {
+                "date": "15-03-2025",
+                "description": "UPI/P2M/608005523909/MOHAMAD IRSHAD /Paymen/YES BANK LIMITED YBS",
+                "debit": 80.0,
+                "credit": 0.0,
+                "balance": 126159.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/507517454556/Zepto /paymen/AXIS BANK",
+                "debit": 205.0,
+                "credit": 0.0,
+                "balance": 125954.86
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/467508895532/NOOR UDDIN /Paymen/YES BANK LIMITED YBS",
+                "debit": 60.0,
+                "credit": 0.0,
+                "balance": 125894.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/191312335574/SAIYYED JIYAUR RAHMAN/Paymen/YES BANK LIMITED YBS",
+                "debit": 13200.0,
+                "credit": 0.0,
+                "balance": 112694.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/017528456937/LUCKNOW CHIKAN ART /Paymen/HDFC BANK LTD",
+                "debit": 12140.0,
+                "credit": 0.0,
+                "balance": 100554.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/017740491491/KAUSHAL KUMAR YADAV /Paymen/YES BANK LIMITED YBS",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 100534.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/845418195577/SHOE PALACE /Paymen/YES BANK LIMITED YBS",
+                "debit": 630.0,
+                "credit": 0.0,
+                "balance": 99904.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/532687302093/MohdNabeel /Sandle/YES BANK LIMITED YBS",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 99654.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2A/969423144112/FAHAD AHMAD /Paymen/Kotak Mahindra Bank",
+                "debit": 200.0,
+                "credit": 0.0,
+                "balance": 99454.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/598038031865/LIZBA FASHION /Paymen/HDFC BANK LTD",
+                "debit": 2300.0,
+                "credit": 0.0,
+                "balance": 97154.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2M/208486066067/MOHAMMAD ALI /Paymen/YES BANK LIMITED YBS",
+                "debit": 40.0,
+                "credit": 0.0,
+                "balance": 97114.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2A/183122089582/MD SHAHRUKH ALAM /Paymen/ICICI Bank",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 95114.86
+            },
+            {
+                "date": "16-03-2025",
+                "description": "UPI/P2A/384370459156/MILAN ALI /Paymen/Kotak Mahindra Bank",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 95014.86
+            },
+            {
+                "date": "17-03-2025",
+                "description": "UPI/P2M/802203840896/Sharvan Kumar Gurjar /Paymen/YES BANK LIMITED YBS",
+                "debit": 30.0,
+                "credit": 0.0,
+                "balance": 94984.86
+            },
+            {
+                "date": "17-03-2025",
+                "description": "UPI/P2M/348619050919/Myntra Designs Pvt Lt/Paymen/YES BANK LIMITED YBS",
+                "debit": 1027.0,
+                "credit": 0.0,
+                "balance": 93957.86
+            },
+            {
+                "date": "17-03-2025",
+                "description": "UPI/P2M/168792609693/ZOMATO LIMITED /UPIlnt/HDFC BANK LTD",
+                "debit": 237.0,
+                "credit": 0.0,
+                "balance": 93720.86
+            },
+            {
+                "date": "17-03-2025",
+                "description": "UPI/P2A/804591530900/FARJAN /Paymen/Kotak Mahindra Bank",
+                "debit": 200.0,
+                "credit": 0.0,
+                "balance": 93520.86
+            },
+            {
+                "date": "17-03-2025",
+                "description": "UPI/P2A/884791893608/DIKSHA /Paymen/BANK OF INDIA",
+                "debit": 180.0,
+                "credit": 0.0,
+                "balance": 93340.86
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2A/237526439467/SWETANK CHAURASIA /Paymen/Kotak Mahindra Bank",
+                "debit": 206.0,
+                "credit": 0.0,
+                "balance": 93134.86
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/544309011825/CRED Club /paymen/AXIS BANK",
+                "debit": 13743.66,
+                "credit": 0.0,
+                "balance": 79391.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/400364207859/Manish Kumar /Paymen/YES BANK LIMITED YBS",
+                "debit": 51.0,
+                "credit": 0.0,
+                "balance": 79340.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/016365864208/Rama Kant Cosmetics /Paymen/AXIS BANK",
+                "debit": 350.0,
+                "credit": 0.0,
+                "balance": 78990.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/990669323733/LOVELY /Paymen/YES BANK LIMITED YBS",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 78890.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/279600293885/New Poonam Garments /Paymen/AXIS BANK",
+                "debit": 850.0,
+                "credit": 0.0,
+                "balance": 78040.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/390486243007/Ajay Kumar Arora Foot/Paymen/AXIS BANK",
+                "debit": 500.0,
+                "credit": 0.0,
+                "balance": 77540.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/745595014947/Janglu /Paymen/YES BANK LIMITED YBS",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 77290.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/293524497591/GLODEN FIESTA LAJPATN/Paymen/YES BANK LIMITED YBS",
+                "debit": 320.0,
+                "credit": 0.0,
+                "balance": 76970.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/872332229386/ROHIT KUMAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 80.0,
+                "credit": 0.0,
+                "balance": 76890.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/872820872532/ISLAM SEKH /Paymen/PHONEPE PVT LTD",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 76790.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/888766337762/OMPRAKASH /Paymen/YES BANK LIMITED YBS",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 76770.2
+            },
+            {
+                "date": "18-03-2025",
+                "description": "UPI/P2M/900313003657/PRAKASH CHAND KUMHAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 76742.2
+            },
+            {
+                "date": "19-03-2025",
+                "description": "UPI/P2A/688272694362/ANIL KUMAR /Paymen/State Bank Of India",
+                "debit": 237.0,
+                "credit": 0.0,
+                "balance": 76505.2
+            },
+            {
+                "date": "19-03-2025",
+                "description": "UPI/P2A/106620383836/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 1000.0,
+                "credit": 0.0,
+                "balance": 75505.2
+            },
+            {
+                "date": "19-03-2025",
+                "description": "UPI/P2A/126059302923/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 73505.2
+            },
+            {
+                "date": "19-03-2025",
+                "description": "UPI/P2A/693006965566/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 650.0,
+                "credit": 0.0,
+                "balance": 72855.2
+            },
+            {
+                "date": "20-03-2025",
+                "description": "UPI/P2A/678117490393/FAHAD ALAM /Paymen/State Bank Of India",
+                "debit": 10000.0,
+                "credit": 0.0,
+                "balance": 62855.2
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "21-03-2025",
+                "description": "UPI/P2A/383841939297/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 15.0,
+                "credit": 0.0,
+                "balance": 62840.2
+            },
+            {
+                "date": "21-03-2025",
+                "description": "UPI/P2A/557161400180/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 62740.2
+            },
+            {
+                "date": "21-03-2025",
+                "description": "UPI/P2A/335910067608/BUSHRA SH/BANK OF I/Payment/",
+                "debit": 0.0,
+                "credit": 143.0,
+                "balance": 62883.2
+            },
+            {
+                "date": "21-03-2025",
+                "description": "UPI/P2A/792826561910/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 1432.0,
+                "credit": 0.0,
+                "balance": 61451.2
+            },
+            {
+                "date": "21-03-2025",
+                "description": "UPI/P2A/434104485679/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 1.0,
+                "credit": 0.0,
+                "balance": 61450.2
+            },
+            {
+                "date": "22-03-2025",
+                "description": "UPI/P2M/854946778745/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 267.0,
+                "credit": 0.0,
+                "balance": 61183.2
+            },
+            {
+                "date": "22-03-2025",
+                "description": "ECS Return Chrgs Incl GST",
+                "debit": 413.0,
+                "credit": 0.0,
+                "balance": 60770.2
+            },
+            {
+                "date": "22-03-2025",
+                "description": "UPI/P2M/095272689106/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 16.0,
+                "credit": 0.0,
+                "balance": 60754.2
+            },
+            {
+                "date": "22-03-2025",
+                "description": "UPI/P2M/934673060768/Zomato Online Order /Zomato/AIRTEL PAYMENTS BANK",
+                "debit": 129.43,
+                "credit": 0.0,
+                "balance": 60624.77
+            },
+            {
+                "date": "22-03-2025",
+                "description": "UPI/P2A/063911186438/MOHD KAMIL /Paymen/Kotak Mahindra Bank",
+                "debit": 260.0,
+                "credit": 0.0,
+                "balance": 60364.77
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/995605791596/Blinkit /Blinki/YES BANK LIMITED YBS",
+                "debit": 793.0,
+                "credit": 0.0,
+                "balance": 59571.77
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2A/674009606549/MD SHAHRUKH ALAM /Paymen/ICICI Bank",
+                "debit": 5000.0,
+                "credit": 0.0,
+                "balance": 54571.77
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2A/413754436031/MD SHAHRUKH ALAM /Paymen/ICICI Bank",
+                "debit": 9400.0,
+                "credit": 0.0,
+                "balance": 45171.77
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/496034312452/Susheel Kumar /Paymen/YES BANK LIMITED YBS",
+                "debit": 89.69,
+                "credit": 0.0,
+                "balance": 45082.08
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/926136690731/LEGEND UNISEX SALON /Paymen/YES BANK LIMITED YBS",
+                "debit": 1200.0,
+                "credit": 0.0,
+                "balance": 43882.08
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/963039433432/Jagdish Prasad Prajap/Paymen/YES BANK LIMITED YBS",
+                "debit": 45.0,
+                "credit": 0.0,
+                "balance": 43837.08
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/594209542205/DIWAKAR KUMAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 43587.08
+            },
+            {
+                "date": "23-03-2025",
+                "description": "UPI/P2M/662924830022/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 43559.08
+            },
+            {
+                "date": "24-03-2025",
+                "description": "UPI/P2A/009105157491/OSEMA BIBI /Paymen/State Bank Of India",
+                "debit": 58.0,
+                "credit": 0.0,
+                "balance": 43501.08
+            },
+            {
+                "date": "24-03-2025",
+                "description": "UPI/P2A/387283876172/INDRA KUMAR DAS /Paymen/HDFC BANK LTD",
+                "debit": 54.0,
+                "credit": 0.0,
+                "balance": 43447.08
+            },
+            {
+                "date": "24-03-2025",
+                "description": "ATM-CASH/DLF PH III GURGAON/GURGAON/240325",
+                "debit": 3000.0,
+                "credit": 0.0,
+                "balance": 40447.08
+            },
+            {
+                "date": "24-03-2025",
+                "description": "UPI/P2M/508343249378/Jio /Sent u/YES BANK LIMITED YBS",
+                "debit": 902.0,
+                "credit": 0.0,
+                "balance": 39545.08
+            },
+            {
+                "date": "27-03-2025",
+                "description": "UPI/P2M/795465845026/NICE SHOE STORES /Paymen/HDFC BANK LTD",
+                "debit": 400.0,
+                "credit": 0.0,
+                "balance": 39145.08
+            },
+            {
+                "date": "27-03-2025",
+                "description": "UPI/P2M/235902462522/ANUSHU KESHARI /Paymen/YES BANK LIMITED YBS",
+                "debit": 200.0,
+                "credit": 0.0,
+                "balance": 38945.08
+            },
+            {
+                "date": "27-03-2025",
+                "description": "UPI/P2M/931565788129/JAMSHED ALAM /Paymen/CANARA BANK",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 38845.08
+            },
+            {
+                "date": "27-03-2025",
+                "description": "UPI/P2A/070289026507/TWINKLE AGARWAL /Paymen/IDBI BANK",
+                "debit": 4200.0,
+                "credit": 0.0,
+                "balance": 34645.08
+            },
+            {
+                "date": "28-03-2025",
+                "description": "UPI/P2M/560562112234/Airtel /Prepai/YES BANK LIMITED YBS",
+                "debit": 195.0,
+                "credit": 0.0,
+                "balance": 34450.08
+            },
+            {
+                "date": "29-03-2025",
+                "description": "NEFT/CITIN25543108980/GLOBEOP FINANCIAL SERV (IND)/CITI BANK/MAR 25 SALARY",
+                "debit": 0.0,
+                "credit": 75453.0,
+                "balance": 109903.08
+            },
+            {
+                "date": "29-03-2025",
+                "description": "UPI/P2A/365218799585/BIBI SHAHZADI /Paymen/UNION BANK OF INDIA",
+                "debit": 50.0,
+                "credit": 0.0,
+                "balance": 109853.08
+            },
+            {
+                "date": "29-03-2025",
+                "description": "UPI/P2M/545402670358/CRED Club /paymen/AXIS BANK",
+                "debit": 39847.0,
+                "credit": 0.0,
+                "balance": 70006.08
+            },
+            {
+                "date": "29-03-2025",
+                "description": "UPI/P2M/242614199599/Jeevan Jyoti /Paymen/AXIS BANK",
+                "debit": 180.0,
+                "credit": 0.0,
+                "balance": 69826.08
+            },
+            {
+                "date": "29-03-2025",
+                "description": "UPI/P2A/963295412707/MD HASIB /Paymen/State Bank Of India",
+                "debit": 110.0,
+                "credit": 0.0,
+                "balance": 69716.08
+            },
+            {
+                "date": "30-03-2025",
+                "description": "UPI/P2A/508921768031/RAJESH SA/HDFC BANK/Sent fro/",
+                "debit": 0.0,
+                "credit": 36437.0,
+                "balance": 106153.08
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "30-03-2025",
+                "description": "UPI/P2M/545502432845/CRED Club /paymen/AXIS BANK",
+                "debit": 79999.0,
+                "credit": 0.0,
+                "balance": 26154.08
+            },
+            {
+                "date": "30-03-2025",
+                "description": "ATM-CASH/IDBI RAJBARI CITY/R KISHANGANJ/300325",
+                "debit": 10000.0,
+                "credit": 0.0,
+                "balance": 16154.08
+            },
+            {
+                "date": "30-03-2025",
+                "description": "UPI/P2A/545542699123/RAJESH SA/HDFC BANK/Sent fro/",
+                "debit": 0.0,
+                "credit": 28830.0,
+                "balance": 44984.08
+            },
+            {
+                "date": "31-03-2025",
+                "description": "UPI/P2A/853291669174/MD FAISAL ALAM SO RAF/Paymen/BANK OF BARODA",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 42984.08
+            },
+            {
+                "date": "31-03-2025",
+                "description": "POS/MS R N DEVELOPERS/PURNIA/310325/20:41/6009",
+                "debit": 2363.0,
+                "credit": 0.0,
+                "balance": 40621.08
+            },
+            {
+                "date": "31-03-2025",
+                "description": "UPI/P2A/572166927475/MD JABUL /Paymen/BANK OF BARODA",
+                "debit": 3500.0,
+                "credit": 0.0,
+                "balance": 37121.08
+            },
+            {
+                "date": "31-03-2025",
+                "description": "SB:5050864238:Int.Pd:01-01-2025 to 31-03-2025",
+                "debit": 0.0,
+                "credit": 157.0,
+                "balance": 37278.08
+            },
+            {
+                "date": "01-04-2025",
+                "description": "UPI/P2M/679014627787/KESHRI COMMUNICATION /Paymen/YES BANK LIMITED YBS",
+                "debit": 34.0,
+                "credit": 0.0,
+                "balance": 37244.08
+            },
+            {
+                "date": "01-04-2025",
+                "description": "UPI/P2A/553523199477/SANJEEV DUTTA /Paymen/BANDHAN BANK LTD",
+                "debit": 75.0,
+                "credit": 0.0,
+                "balance": 37169.08
+            },
+            {
+                "date": "02-04-2025",
+                "description": "ECS/UTIBDE12589450202410/Bajaj Finance Ltd SMS OT",
+                "debit": 24922.0,
+                "credit": 0.0,
+                "balance": 12247.08
+            },
+            {
+                "date": "02-04-2025",
+                "description": "MPR008211389449 EMI 02-04-2025",
+                "debit": 8294.0,
+                "credit": 0.0,
+                "balance": 3953.08
+            },
+            {
+                "date": "06-04-2025",
+                "description": "UPI/P2A/509658038601/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 50000.0,
+                "balance": 53953.08
+            },
+            {
+                "date": "06-04-2025",
+                "description": "UPI/P2M/546278499407/CRED Club /paymen/AXIS BANK",
+                "debit": 49995.0,
+                "credit": 0.0,
+                "balance": 3958.08
+            },
+            {
+                "date": "07-04-2025",
+                "description": "UPI/P2M/509777271760/CRED Club /paymen/AXIS BANK",
+                "debit": 2632.0,
+                "credit": 0.0,
+                "balance": 1326.08
+            },
+            {
+                "date": "09-04-2025",
+                "description": "UPI/P2A/509983541581/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 1970.0,
+                "balance": 3296.08
+            },
+            {
+                "date": "09-04-2025",
+                "description": "UPI/P2M/502250503848/Mr SHRIKUMAR THAKU /Paymen/YES BANK LIMITED YBS",
+                "debit": 200.0,
+                "credit": 0.0,
+                "balance": 3096.08
+            },
+            {
+                "date": "09-04-2025",
+                "description": "UPI/P2A/591584691320/Mr Jamil Akhtar /Paymen/CENTRAL BANK OF INDI",
+                "debit": 1500.0,
+                "credit": 0.0,
+                "balance": 1596.08
+            },
+            {
+                "date": "10-04-2025",
+                "description": "UPI/P2A/352896919629/BUSHRA SH/BANK OF I/Payment/",
+                "debit": 0.0,
+                "credit": 1.0,
+                "balance": 1597.08
+            },
+            {
+                "date": "11-04-2025",
+                "description": "UPI/P2A/879872661495/FAIZ ALAM/BANK OF B/Payment/",
+                "debit": 0.0,
+                "credit": 2200.0,
+                "balance": 3797.08
+            },
+            {
+                "date": "11-04-2025",
+                "description": "UPI/P2M/776791291704/gff resturant /Paymen/State Bank Of India",
+                "debit": 1317.0,
+                "credit": 0.0,
+                "balance": 2480.08
+            },
+            {
+                "date": "11-04-2025",
+                "description": "UPI/P2M/712925739273/gff resturant /Paymen/State Bank Of India",
+                "debit": 240.0,
+                "credit": 0.0,
+                "balance": 2240.08
+            },
+            {
+                "date": "11-04-2025",
+                "description": "UPI/P2A/510103188255/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 9850.0,
+                "balance": 12090.08
+            },
+            {
+                "date": "12-04-2025",
+                "description": "UPI/P2A/921275735918/MD SHAHRUKH ALAM /Paymen/ICICI Bank",
+                "debit": 3333.0,
+                "credit": 0.0,
+                "balance": 8757.08
+            },
+            {
+                "date": "13-04-2025",
+                "description": "UPI/P2M/690168248070/ZOMATO LIMITED /UPIInt/ICICI Bank",
+                "debit": 342.0,
+                "credit": 0.0,
+                "balance": 8415.08
+            },
+            {
+                "date": "14-04-2025",
+                "description": "UPI/P2A/191143127386/FAIZ ALAM /Paymen/BANK OF BARODA",
+                "debit": 6000.0,
+                "credit": 0.0,
+                "balance": 2415.08
+            },
+            {
+                "date": "15-04-2025",
+                "description": "UPI/P2M/303803789426/UBER INDIA SYSTEMS PR/UberRi/ICICI Bank",
+                "debit": 427.58,
+                "credit": 0.0,
+                "balance": 1987.5
+            },
+            {
+                "date": "15-04-2025",
+                "description": "UPI/P2M/161769436737/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 1959.5
+            },
+            {
+                "date": "15-04-2025",
+                "description": "UPI/P2M/351836481762/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 50.0,
+                "credit": 0.0,
+                "balance": 1909.5
+            },
+            {
+                "date": "16-04-2025",
+                "description": "UPI/P2M/950656936669/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 240.0,
+                "credit": 0.0,
+                "balance": 1669.5
+            },
+            {
+                "date": "16-04-2025",
+                "description": "UPI/P2M/001470878834/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 1549.5
+            },
+            {
+                "date": "17-04-2025",
+                "description": "UPI/P2M/945728755186/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 28.0,
+                "credit": 0.0,
+                "balance": 1521.5
+            },
+            {
+                "date": "19-04-2025",
+                "description": "UPI/P2A/175293433872/MD FAISAL/State Ban/Payment/",
+                "debit": 0.0,
+                "credit": 3000.0,
+                "balance": 4521.5
+            },
+            {
+                "date": "19-04-2025",
+                "description": "UPI/P2M/295153306906/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 4401.5
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "20-04-2025",
+                "description": "ECS Return Chrgs Incl GST",
+                "debit": 413.0,
+                "credit": 0.0,
+                "balance": 3988.5
+            },
+            {
+                "date": "20-04-2025",
+                "description": "UPI/P2M/340592939545/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 3868.5
+            },
+            {
+                "date": "21-04-2025",
+                "description": "UPI/P2A/724219077782/MD SHAHRUKH ALAM /Paymen/ICICI Bank",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 1868.5
+            },
+            {
+                "date": "21-04-2025",
+                "description": "UPI/P2M/997279792549/BharatPe Merchant /Paymen/YesBank Yespay",
+                "debit": 345.0,
+                "credit": 0.0,
+                "balance": 1523.5
+            },
+            {
+                "date": "22-04-2025",
+                "description": "UPI/P2M/416687495451/GruBox /GruBox/AIRTEL PAYMENTS BANK",
+                "debit": 150.0,
+                "credit": 0.0,
+                "balance": 1373.5
+            },
+            {
+                "date": "22-04-2025",
+                "description": "UPI/P2A/283599482265/SUFFIYAN /BANK OF B/Sent fro/",
+                "debit": 0.0,
+                "credit": 140.0,
+                "balance": 1513.5
+            },
+            {
+                "date": "22-04-2025",
+                "description": "UPI/P2A/276493851918/SHIVAM SRIVASTAV /Paymen/Kotak Mahindra Bank",
+                "debit": 220.0,
+                "credit": 0.0,
+                "balance": 1293.5
+            },
+            {
+                "date": "22-04-2025",
+                "description": "UPI/P2M/712289278174/ASHOK KUMAR SWAMI /Paymen/YES BANK LIMITED YBS",
+                "debit": 40.0,
+                "credit": 0.0,
+                "balance": 1253.5
+            },
+            {
+                "date": "22-04-2025",
+                "description": "UPI/P2M/232381579680/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 1133.5
+            },
+            {
+                "date": "23-04-2025",
+                "description": "UPI/P2M/272245769217/Shubham Bansal Medica/Paymen/AXIS BANK",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 1113.5
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2A/283378859785/RAJESH SA/CANARA BA/Payment/",
+                "debit": 0.0,
+                "credit": 15000.0,
+                "balance": 16113.5
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2M/511466892321/Dreamplug Service Pri/paymen/AXIS BANK",
+                "debit": 780.22,
+                "credit": 0.0,
+                "balance": 15333.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2M/511455922979/CRED Club /paymen/AXIS BANK",
+                "debit": 9999.0,
+                "credit": 0.0,
+                "balance": 5334.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2A/492199080196/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 3000.0,
+                "credit": 0.0,
+                "balance": 2334.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2A/511499833257/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 17240.0,
+                "balance": 19574.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2M/511446682424/CRED Club /paymen/AXIS BANK",
+                "debit": 9994.0,
+                "credit": 0.0,
+                "balance": 9580.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2A/580509328007/DHIRENDRA SINGH /Paymen/State Bank Of India",
+                "debit": 706.0,
+                "credit": 0.0,
+                "balance": 8874.28
+            },
+            {
+                "date": "24-04-2025",
+                "description": "UPI/P2M/489394950706/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 660.0,
+                "credit": 0.0,
+                "balance": 8214.28
+            },
+            {
+                "date": "25-04-2025",
+                "description": "UPI/P2M/725766290920/GruBox /GruBox/AIRTEL PAYMENTS BANK",
+                "debit": 60.0,
+                "credit": 0.0,
+                "balance": 8154.28
+            },
+            {
+                "date": "25-04-2025",
+                "description": "UPI/P2M/840015792484/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 38.0,
+                "credit": 0.0,
+                "balance": 8116.28
+            },
+            {
+                "date": "26-04-2025",
+                "description": "UPI/P2A/555915209543/FAHAD ALAM /Paymen/State Bank Of India",
+                "debit": 3000.0,
+                "credit": 0.0,
+                "balance": 5116.28
+            },
+            {
+                "date": "28-04-2025",
+                "description": "UPI/P2M/485847777806/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 88.0,
+                "credit": 0.0,
+                "balance": 5028.28
+            },
+            {
+                "date": "29-04-2025",
+                "description": "UPI/P2M/550987604925/LEGEND UNISEX SALON /Paymen/YES BANK LIMITED YBS",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 4778.28
+            },
+            {
+                "date": "29-04-2025",
+                "description": "UPI/P2M/752831205304/NITIN /Paymen/YES BANK LIMITED YBS",
+                "debit": 40.0,
+                "credit": 0.0,
+                "balance": 4738.28
+            },
+            {
+                "date": "29-04-2025",
+                "description": "UPI/P2M/105682264677/NARAYANA HRUDAYALAYA/Paymen/YES BANK LIMITED YBS",
+                "debit": 561.0,
+                "credit": 0.0,
+                "balance": 4177.28
+            },
+            {
+                "date": "29-04-2025",
+                "description": "UPI/P2A/200535490167/Sachin /Door I/AIRTEL PAYMENTS BANK",
+                "debit": 1550.0,
+                "credit": 0.0,
+                "balance": 2627.28
+            },
+            {
+                "date": "29-04-2025",
+                "description": "UPI/P2A/725503364966/MOHD KAMIL /Paymen/Kotak Mahindra Bank",
+                "debit": 240.0,
+                "credit": 0.0,
+                "balance": 2387.28
+            },
+            {
+                "date": "30-04-2025",
+                "description": "NEFT/CITIN25557697378/GLOBEOP FINANCIAL SERV (IND)/CITI BANK/APR 25 SALARY",
+                "debit": 0.0,
+                "credit": 75033.0,
+                "balance": 77420.28
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2M/505846053437/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 77320.28
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2M/278334858906/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 25.0,
+                "credit": 0.0,
+                "balance": 77295.28
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2M/548612783455/CRED Club /paymen/AXIS BANK",
+                "debit": 641.4,
+                "credit": 0.0,
+                "balance": 76653.88
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2A/110809802817/RAMBRIT MAHTO SO PARA/Paymen/BANK OF INDIA",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 76633.88
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2A/149588876584/HOTEL SKY LOK /Paymen/CANARA BANK",
+                "debit": 20.0,
+                "credit": 0.0,
+                "balance": 76613.88
+            },
+            {
+                "date": "30-04-2025",
+                "description": "UPI/P2M/022703712940/Chandrdev General Sto/Paymen/AXIS BANK",
+                "debit": 135.0,
+                "credit": 0.0,
+                "balance": 76478.88
+            },
+            {
+                "date": "01-05-2025",
+                "description": "UPI/P2M/492021772255/UBER INDIA SYSTEMS PR/UberRi/AIRTEL PAYMENTS BANK",
+                "debit": 373.85,
+                "credit": 0.0,
+                "balance": 76105.03
+            },
+            {
+                "date": "01-05-2025",
+                "description": "UPI/P2A/734469610849/Jharokha Devi /Paymen/AIRTEL PAYMENTS BANK",
+                "debit": 150.0,
+                "credit": 0.0,
+                "balance": 75955.03
+            },
+            {
+                "date": "01-05-2025",
+                "description": "MPR008211389449_EMI_01-05-2025_FAIZ ALAM",
+                "debit": 8294.0,
+                "credit": 0.0,
+                "balance": 67661.03
+            },
+            {
+                "date": "01-05-2025",
+                "description": "UPI/P2M/548724011467/CRED Club /paymen/AXIS BANK",
+                "debit": 37858.0,
+                "credit": 0.0,
+                "balance": 29803.03
+            },
+            {
+                "date": "01-05-2025",
+                "description": "UPI/P2M/548718007216/CRED Club /paymen/AXIS BANK",
+                "debit": 12160.0,
+                "credit": 0.0,
+                "balance": 17643.03
+            },
+            {
+                "date": "01-05-2025",
+                "description": "UPI/P2M/548710011160/CRED Club /paymen/AXIS BANK",
+                "debit": 15000.0,
+                "credit": 0.0,
+                "balance": 2643.03
+            },
+            {
+                "date": "02-05-2025",
+                "description": "UPI/P2A/512243769079/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 36940.0,
+                "balance": 39583.03
+            },
+            {
+                "date": "02-05-2025",
+                "description": "ECS/UTIBDE12589450202410/Bajaj Finance Ltd SMS OT",
+                "debit": 24922.0,
+                "credit": 0.0,
+                "balance": 14661.03
+            },
+            {
+                "date": "02-05-2025",
+                "description": "UPI/P2A/512246664310/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 29050.0,
+                "balance": 43711.03
+            },
+            {
+                "date": "02-05-2025",
+                "description": "UPI/P2M/548807163316/CRED Club /paymen/AXIS BANK",
+                "debit": 40000.0,
+                "credit": 0.0,
+                "balance": 3711.03
+            },
+            {
+                "date": "02-05-2025",
+                "description": "UPI/P2M/964342120947/RAJIYA PARWEEN /Paymen/YES BANK LIMITED YBS",
+                "debit": 10.0,
+                "credit": 0.0,
+                "balance": 3701.03
+            },
+            {
+                "date": "03-05-2025",
+                "description": "UPI/P2M/444199053336/Mahamaya Sweets And S/Paymen/AXIS BANK",
+                "debit": 350.0,
+                "credit": 0.0,
+                "balance": 3351.03
+            },
+            {
+                "date": "03-05-2025",
+                "description": "UPI/P2M/207606739018/KESHRI COMMUNICATION/Paymen/YES BANK LIMITED YBS",
+                "debit": 60.0,
+                "credit": 0.0,
+                "balance": 3291.03
+            },
+            {
+                "date": "03-05-2025",
+                "description": "UPI/P2A/466421256574/HABIBUR RAHMAN /Paymen/UCO BANK",
+                "debit": 1500.0,
+                "credit": 0.0,
+                "balance": 1791.03
+            },
+            {
+                "date": "03-05-2025",
+                "description": "UPI/P2A/284301352810/RAJESH SA/HDFC BANK/Sent fro/",
+                "debit": 0.0,
+                "credit": 38420.0,
+                "balance": 40211.03
+            },
+            {
+                "date": "04-05-2025",
+                "description": "UPI/P2M/549031480667/CRED Club /paymen/AXIS BANK",
+                "debit": 40000.0,
+                "credit": 0.0,
+                "balance": 211.03
+            },
+            {
+                "date": "04-05-2025",
+                "description": "UPI/P2A/512463197498/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 24400.0,
+                "balance": 24611.03
+            },
+            {
+                "date": "05-05-2025",
+                "description": "UPI/P2A/140074976286/MANISH YADAV SO BISRA/Paymen/Punjab National Bank",
+                "debit": 16000.0,
+                "credit": 0.0,
+                "balance": 8611.03
+            },
+            {
+                "date": "06-05-2025",
+                "description": "UPI/P2M/059882097712/EZAN ENTERPRISES /Paymen/YES BANK LIMITED YBS",
+                "debit": 390.0,
+                "credit": 0.0,
+                "balance": 8221.03
+            },
+            {
+                "date": "06-05-2025",
+                "description": "UPI/P2A/610443270302/MISTER /Paymen/Punjab National Bank",
+                "debit": 1500.0,
+                "credit": 0.0,
+                "balance": 6721.03
+            },
+            {
+                "date": "07-05-2025",
+                "description": "UPI/P2A/240977666585/HABIBUR RAHMAN /Paymen/UCO BANK",
+                "debit": 1500.0,
+                "credit": 0.0,
+                "balance": 5221.03
+            },
+            {
+                "date": "07-05-2025",
+                "description": "UPI/P2M/779609291931/EKART /Paymen/YES BANK LIMITED YBS",
+                "debit": 534.0,
+                "credit": 0.0,
+                "balance": 4687.03
+            },
+            {
+                "date": "09-05-2025",
+                "description": "UPI/P2A/730496927473/MD FAISAL/State Ban/Payment/",
+                "debit": 0.0,
+                "credit": 1500.0,
+                "balance": 6187.03
+            },
+            {
+                "date": "09-05-2025",
+                "description": "UPI/P2A/954473224621/HABIBUR RAHMAN /Paymen/UCO BANK",
+                "debit": 3800.0,
+                "credit": 0.0,
+                "balance": 2387.03
+            },
+            {
+                "date": "10-05-2025",
+                "description": "UPI/P2M/549611342602/Airtel /Prepai/YES BANK LIMITED YBS",
+                "debit": 649.0,
+                "credit": 0.0,
+                "balance": 1738.03
+            },
+            {
+                "date": "14-05-2025",
+                "description": "UPI/P2A/095826811751/MD FAISAL/BANK OF B/Payment/",
+                "debit": 0.0,
+                "credit": 9000.0,
+                "balance": 10738.03
+            },
+            {
+                "date": "15-05-2025",
+                "description": "UPI/P2A/381563082022/MD NOOR ISLAM /Paymen/HDFC BANK LTD",
+                "debit": 1900.0,
+                "credit": 0.0,
+                "balance": 8838.03
+            },
+            {
+                "date": "15-05-2025",
+                "description": "UPI/P2M/475198701503/MD YAHIA /Paymen/YES BANK LIMITED YBS",
+                "debit": 150.0,
+                "credit": 0.0,
+                "balance": 8688.03
+            },
+            {
+                "date": "15-05-2025",
+                "description": "UPI/P2M/880384201554/A R CHAI CHASKA /Paymen/AXIS BANK",
+                "debit": 140.0,
+                "credit": 0.0,
+                "balance": 8548.03
+            },
+            {
+                "date": "15-05-2025",
+                "description": "UPI/P2A/668778142778/MISTER /Paymen/Punjab National Bank",
+                "debit": 1800.0,
+                "credit": 0.0,
+                "balance": 6748.03
+            },
+            {
+                "date": "15-05-2025",
+                "description": "UPI/P2A/488790061497/MISTER/Punjab Na/Payment/",
+                "debit": 0.0,
+                "credit": 400.0,
+                "balance": 7148.03
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "16-05-2025",
+                "description": "UPI/P2A/564060017958/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 5148.03
+            },
+            {
+                "date": "17-05-2025",
+                "description": "UPI/P2A/164126742852/TWINKLE AGARWAL /Paymen/IDBI BANK",
+                "debit": 550.0,
+                "credit": 0.0,
+                "balance": 4598.03
+            },
+            {
+                "date": "17-05-2025",
+                "description": "UPI/P2M/219317637251/CHOWHAN SWEETS /Paymen/ICICI Bank",
+                "debit": 300.0,
+                "credit": 0.0,
+                "balance": 4298.03
+            },
+            {
+                "date": "17-05-2025",
+                "description": "UPI/P2A/746476600463/HABIBUR RAHMAN /Paymen/UCO BANK",
+                "debit": 1800.0,
+                "credit": 0.0,
+                "balance": 2498.03
+            },
+            {
+                "date": "17-05-2025",
+                "description": "UPI/P2A/331823704968/FAIZ ALA/State Ban/Payment/",
+                "debit": 0.0,
+                "credit": 500.0,
+                "balance": 2998.03
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2A/513848441222/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 5000.0,
+                "balance": 7998.03
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2A/704739083002/MISTER /Petrol/Punjab National Bank",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 5998.03
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2M/593396358701/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 753.52,
+                "credit": 0.0,
+                "balance": 5244.51
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2A/100576978800/ZOMATO/HDFC BANK/Order Re/",
+                "debit": 0.0,
+                "credit": 135.63,
+                "balance": 5380.14
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2A/681007734490/KAUSHIK SAHA /Paymen/UJJIVAN SMALL FINANC",
+                "debit": 1980.0,
+                "credit": 0.0,
+                "balance": 3400.14
+            },
+            {
+                "date": "18-05-2025",
+                "description": "UPI/P2M/950283598852/SILIGURI NEW ARSHLAN/Paymen/ICICI Bank",
+                "debit": 957.0,
+                "credit": 0.0,
+                "balance": 2443.14
+            },
+            {
+                "date": "20-05-2025",
+                "description": "UPI/P2M/195772287336/MD NADEEM MAZHAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 420.0,
+                "credit": 0.0,
+                "balance": 2023.14
+            },
+            {
+                "date": "20-05-2025",
+                "description": "UPI/P2M/448533526049/Mahamaya Sweets And S/Paymen/AXIS BANK",
+                "debit": 1300.0,
+                "credit": 0.0,
+                "balance": 723.14
+            },
+            {
+                "date": "21-05-2025",
+                "description": "UPI/P2A/436405935140/MISTER /Paymen/Punjab National Bank",
+                "debit": 700.0,
+                "credit": 0.0,
+                "balance": 23.14
+            },
+            {
+                "date": "21-05-2025",
+                "description": "UPI/P2A/071961571262/Rinki De/State Ban/Payment/",
+                "debit": 0.0,
+                "credit": 1200.0,
+                "balance": 1223.14
+            },
+            {
+                "date": "23-05-2025",
+                "description": "UPI/P2A/514380882010/RAJESH SA/HDFC BANK/NA/",
+                "debit": 0.0,
+                "credit": 7880.0,
+                "balance": 9103.14
+            },
+            {
+                "date": "23-05-2025",
+                "description": "UPI/P2M/234252421501/RAVINDRA KUMAR /Paymen/YES BANK LIMITED YBS",
+                "debit": 70.0,
+                "credit": 0.0,
+                "balance": 9033.14
+            },
+            {
+                "date": "23-05-2025",
+                "description": "UPI/P2A/820178530237/MISTER /Paymen/Punjab National Bank",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 7033.14
+            },
+            {
+                "date": "23-05-2025",
+                "description": "UPI/P2A/105939264386/PRASURAM GHOSH /Paymen/BANK OF INDIA",
+                "debit": 250.0,
+                "credit": 0.0,
+                "balance": 6783.14
+            },
+            {
+                "date": "23-05-2025",
+                "description": "UPI/P2A/848955644225/MISTER /Paymen/Punjab National Bank",
+                "debit": 2000.0,
+                "credit": 0.0,
+                "balance": 4783.14
+            },
+            {
+                "date": "24-05-2025",
+                "description": "ECS Return Chrgs Incl GST",
+                "debit": 413.0,
+                "credit": 0.0,
+                "balance": 4370.14
+            },
+            {
+                "date": "25-05-2025",
+                "description": "UPI/P2M/770940770384/IRCTC Rail APP /Paymen/YES BANK LIMITED YBS",
+                "debit": 529.05,
+                "credit": 0.0,
+                "balance": 3841.09
+            },
+            {
+                "date": "25-05-2025",
+                "description": "UPI/P2A/942912120381/MD KHORSET ALI /Kne to/CANARA BANK",
+                "debit": 1500.0,
+                "credit": 0.0,
+                "balance": 2341.09
+            },
+            {
+                "date": "25-05-2025",
+                "description": "UPI/P2M/288141979792/MS AK AGENCIES /Paymen/YES BANK LIMITED YBS",
+                "debit": 430.0,
+                "credit": 0.0,
+                "balance": 1911.09
+            },
+            {
+                "date": "26-05-2025",
+                "description": "UPI/P2M/159430749711/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 240.0,
+                "credit": 0.0,
+                "balance": 1671.09
+            },
+            {
+                "date": "30-05-2025",
+                "description": "UPI/P2M/286153663186/ZOMATO /Paymen/HDFC BANK LTD",
+                "debit": 236.0,
+                "credit": 0.0,
+                "balance": 1435.09
+            },
+            {
+                "date": "30-05-2025",
+                "description": "UPI/P2M/021902435328/BharatPe Merchant /Paymen/YesBank Yespay",
+                "debit": 45.0,
+                "credit": 0.0,
+                "balance": 1390.09
+            },
+            {
+                "date": "30-05-2025",
+                "description": "UPI/P2M/164667060065/Zomato Ltd /Zomato/YES BANK LIMITED YBS",
+                "debit": 777.8,
+                "credit": 0.0,
+                "balance": 612.29
+            },
+            {
+                "date": "31-05-2025",
+                "description": "NEFT/CITIN25573202689/GLOBEOP FINANCIAL SERV (IND)/CITI BANK/MAY 25 SALARY",
+                "debit": 0.0,
+                "credit": 72333.0,
+                "balance": 72945.29
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2A/752220037786/RAJESH SAW /Paymen/HDFC BANK LTD",
+                "debit": 17000.0,
+                "credit": 0.0,
+                "balance": 55945.29
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2M/551726273771/CRED Club /paymen/AXIS BANK",
+                "debit": 3737.15,
+                "credit": 0.0,
+                "balance": 52208.14
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2M/551712271068/CRED Club /paymen/AXIS BANK",
+                "debit": 9052.18,
+                "credit": 0.0,
+                "balance": 43155.96
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2M/551703271023/CRED Club /paymen/AXIS BANK",
+                "debit": 40000.0,
+                "credit": 0.0,
+                "balance": 3155.96
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2M/551709287736/Lenskart /paymen/AXIS BANK",
+                "debit": 49.0,
+                "credit": 0.0,
+                "balance": 3106.96
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2A/515143019314/RAJESH SA/HDFC BANK/Sent usi/",
+                "debit": 0.0,
+                "credit": 50000.0,
+                "balance": 53106.96
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2M/551725321015/CRED Club /paymen/AXIS BANK",
+                "debit": 41505.56,
+                "credit": 0.0,
+                "balance": 11601.4
+            },
+            {
+                "date": "31-05-2025",
+                "description": "UPI/P2A/515145135880/RAJESH SA/HDFC BANK/Sent usi/",
+                "debit": 0.0,
+                "credit": 40880.0,
+                "balance": 52481.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "MPR008211389449_EMI_01-06-2025_FAIZ ALAM",
+                "debit": 8294.0,
+                "credit": 0.0,
+                "balance": 44187.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "UPI/P2A/887669391419/MOHD KAMIL /Paymen/Kotak Mahindra Bank",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 44067.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "UPI/P2A/768012848106/BUSHRA SHAD /Paymen/BANK OF INDIA",
+                "debit": 3000.0,
+                "credit": 0.0,
+                "balance": 41067.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "UPI/P2A/326247006703/ADARSH MISHRA SO PRAM/Paymen/BANK OF INDIA",
+                "debit": 410.0,
+                "credit": 0.0,
+                "balance": 40657.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "UPI/P2M/495986824151/MOHD NAZBULHAQ /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 40537.4
+            },
+            {
+                "date": "01-06-2025",
+                "description": "UPI/P2M/030361599528/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 100.0,
+                "credit": 0.0,
+                "balance": 40437.4
+            },
+            {
+                "date": "02-06-2025",
+                "description": "ECS/UTIBDE12589450202410/Bajaj Finance Ltd SMS OT",
+                "debit": 24922.0,
+                "credit": 0.0,
+                "balance": 15515.4
+            },
+            {
+                "date": "02-06-2025",
+                "description": "UPI/P2A/555850543250/MANISH K/State Ban/Payment/",
+                "debit": 0.0,
+                "credit": 390.0,
+                "balance": 15905.4
+            },
+            {
+                "date": "02-06-2025",
+                "description": "UPI/P2M/475169861491/SHABANA /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 15785.4
+            },
+            {
+                "date": "02-06-2025",
+                "description": "UPI/P2M/019197599480/Zomato Online Order /Zomato/AIRTEL PAYMENTS BANK",
+                "debit": 242.7,
+                "credit": 0.0,
+                "balance": 15542.7
+            },
+            {
+                "date": "03-06-2025",
+                "description": "UPI/P2M/792658201533/JUNED ALAM /Paymen/YES BANK LIMITED YBS",
+                "debit": 120.0,
+                "credit": 0.0,
+                "balance": 15422.7
+            },
+            {
+                "date": "03-06-2025",
+                "description": "UPI/P2M/688679341485/OMPRAKASH SO RATANLAL/Paymen/YES BANK LIMITED YBS",
+                "debit": 80.0,
+                "credit": 0.0,
+                "balance": 15342.7
+            },
+            {
+                "date": "04-06-2025",
+                "description": "UPI/P2M/755780777547/Zomato Ltd /Zomato/YES BANK LIMITED YBS",
+                "debit": 196.9,
+                "credit": 0.0,
+                "balance": 15145.8
+            },
+            {
+                "date": NaN,
+                "description": "TRANSACTION TOTAL",
+                "debit": 851787.16,
+                "credit": 864080.63,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": "CLOSING BALANCE",
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 15145.8
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": NaN,
+                "description": NaN,
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "Sr. No.",
+                "description": "Recover Date",
+                "debit": 0.0,
+                "credit": 0.0,
+                "balance": 0.0
+            },
+            {
+                "date": "1",
+                "description": "22-03-2025",
+                "debit": 0.0,
+                "credit": 350.0,
+                "balance": 350.0
+            },
+            {
+                "date": "2",
+                "description": "20-04-2025",
+                "debit": 0.0,
+                "credit": 350.0,
+                "balance": 350.0
+            },
+            {
+                "date": "3",
+                "description": "24-05-2025",
+                "debit": 0.0,
+                "credit": 350.0,
+                "balance": 350.0
+            }
+        ]
+    }
+]

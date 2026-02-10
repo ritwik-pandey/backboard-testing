@@ -1,196 +1,274 @@
-import csv
 import asyncio
+import os
+import io
+import csv
+import re
+import json
 import pdfplumber
+import pandas as pd
+import time
 from backboard import BackboardClient
 
-# 1. SETUP: Your Schema
-metrics_schema = [
-    {"metric_name": "revenue_total", "aliases": ["total revenue", "net sales", "turnover"]},
-    {"metric_name": "cost_of_revenue", "aliases": ["cost of goods sold", "cogs", "cost of sales"]},
-    {"metric_name": "gross_profit", "aliases": ["gross profit", "gross margin"]},
-    {"metric_name": "operating_expenses_total", "aliases": ["total operating expenses", "opex"]},
-    {"metric_name": "net_income", "aliases": ["net income", "net profit", "loss for the period"]},
-    {"metric_name": "cash_from_operations", "aliases": ["net cash from operating", "cash flow from operations"]},
-    {"metric_name": "capital_expenditure", "aliases": ["purchase of property", "capex"]},
-    {"metric_name": "cash_end_period", "aliases": ["cash and cash equivalents at end", "ending cash balance"]},
-    {"metric_name": "total_assets", "aliases": ["total assets"]},
-    {"metric_name": "total_liabilities", "aliases": ["total liabilities"]},
-    {"metric_name": "shareholders_equity", "aliases": ["total equity", "shareholders' equity"]},
-    {"metric_name": "employee_count", "aliases": ["employees", "headcount"]}
+# --- CONFIGURATION ---
+PDF_FOLDER_PATH = "/Users/anubhavkayal/Data Scrapping/backboard-testing/reports"
+OUTPUT_FILE = "monte_carlo_final_data.csv" 
+API_KEY = "espr_Hlape8JgiHiwIEt-Ash9LE55tIyTECHENuUHRAYjlKU"
+
+# 1. THE EXACT 32-METRIC SCHEMA
+METRICS_SCHEMA = [
+    {"metric_name": "revenue_total", "aliases": ["total income", "interest earned", "revenue from operations", "sales"]},
+    {"metric_name": "cost_of_revenue", "aliases": ["interest expended", "cost of goods sold", "cogs", "finance costs"]},
+    {"metric_name": "gross_profit", "aliases": ["net interest income", "nii", "gross profit"]},
+    {"metric_name": "operating_expenses_total", "aliases": ["operating expenses", "total expenditure", "total expenses"]},
+    {"metric_name": "employee_costs", "aliases": ["employee benefit expenses", "payments to and provisions for employees", "staff costs"]},
+    {"metric_name": "selling_marketing_expense", "aliases": ["selling and distribution expenses", "advertisement", "business promotion"]},
+    {"metric_name": "rnd_expense", "aliases": ["research and development", "r&d expenses"]},
+    {"metric_name": "general_admin_expense", "aliases": ["general and administrative expenses", "other expenses", "other operating expenses"]},
+    {"metric_name": "operating_income", "aliases": ["operating profit", "profit before provisions and tax", "ebit"]},
+    {"metric_name": "interest_expense", "aliases": ["finance costs", "interest costs"]},
+    {"metric_name": "tax_expense", "aliases": ["tax expense", "total tax expenses", "provision for tax"]},
+    {"metric_name": "net_income", "aliases": ["net profit", "profit after tax", "net profit for the period", "pat"]},
+    
+    # Cash Flow & Balance Sheet (Standard)
+    {"metric_name": "cash_from_operations", "aliases": ["net cash flow from operating activities"]},
+    {"metric_name": "capital_expenditure", "aliases": ["purchase of property, plant and equipment", "capex"]},
+    {"metric_name": "cash_from_investing", "aliases": ["net cash flow from investing activities"]},
+    {"metric_name": "cash_from_financing", "aliases": ["net cash flow from financing activities"]},
+    {"metric_name": "dividends_paid", "aliases": ["dividend paid", "dividends on equity shares"]},
+    {"metric_name": "net_change_in_cash", "aliases": ["net increase/(decrease) in cash"]},
+    {"metric_name": "cash_end_period", "aliases": ["cash and cash equivalents at the end of the period"]},
+    
+    {"metric_name": "cash_and_equivalents", "aliases": ["cash and bank balances", "cash and cash equivalents"]},
+    {"metric_name": "short_term_investments", "aliases": ["current investments", "investments"]},
+    {"metric_name": "total_current_assets", "aliases": ["total current assets"]},
+    {"metric_name": "total_assets", "aliases": ["total assets", "grand total - assets"]},
+    {"metric_name": "short_term_debt", "aliases": ["short term borrowings"]},
+    {"metric_name": "long_term_debt", "aliases": ["long term borrowings"]},
+    {"metric_name": "total_liabilities", "aliases": ["total liabilities", "total capital and liabilities"]},
+    {"metric_name": "shareholders_equity", "aliases": ["total equity", "net worth", "share capital + reserves"]},
+    
+    # Operational
+    {"metric_name": "employee_count", "aliases": ["number of employees", "headcount"]},
+    {"metric_name": "avg_employee_cost", "aliases": ["cost per employee"]},
+    {"metric_name": "branch_count", "aliases": ["number of branches", "banking outlets"]},
+    {"metric_name": "customer_count", "aliases": ["number of customers", "customer base"]},
+    {"metric_name": "segment_revenue", "aliases": ["revenue by segment"]}
 ]
 
-# 2. EXTRACT ONLY RELEVANT PAGES (The Cost Saver)
+# 2. HELPER: ROBUST Period Finder
+def extract_period_from_text(text):
+    text_lower = text.lower()
+    
+    # PATTERN: "Ended 30th September 2023"
+    matches = re.findall(r"(\d{1,2})?[\s-]*([a-z]+)[\s-]*(\d{1,2})?,?[\s-]*(\d{4})", text_lower[:2000]) 
+    
+    months_map = {
+        "january": ("Q4", 0), "february": ("Q4", 0), "march": ("Q4", 0),
+        "april": ("Q1", 0), "may": ("Q1", 0), "june": ("Q1", 0),
+        "july": ("Q2", 0), "august": ("Q2", 0), "september": ("Q2", 0),
+        "october": ("Q3", 0), "november": ("Q3", 0), "december": ("Q3", 0)
+    }
+
+    best_period = "Unknown Period"
+    
+    if matches:
+        for match in matches:
+            parts = [p for p in match if p]
+            
+            found_month = None
+            found_year = None
+            
+            for p in parts:
+                if p in months_map:
+                    found_month = p
+                elif len(p) == 4 and p.isdigit():
+                    found_year = int(p)
+            
+            if found_month and found_year:
+                q_label, year_offset = months_map[found_month]
+                fiscal_year = found_year
+                if found_month in ["january", "february", "march"]:
+                    fiscal_year = found_year 
+                else:
+                    fiscal_year = found_year + 1 
+                
+                best_period = f"{q_label} FY{str(fiscal_year)[2:]} ({found_month.title()} {found_year})"
+                return best_period 
+
+    return best_period
+
+# 3. HELPER: Page Selector
 def get_filtered_text(pdf_path):
-    print(f"📖 Scanning PDF for relevant financial pages: {pdf_path}")
+    print(f"📖 Scanning {os.path.basename(pdf_path)}...")
     relevant_text = ""
+    keywords = ["revenue", "income", "profit", "assets", "liabilities", "cash flow", "consolidated", "standalone"]
     
-    # Keywords that usually appear on the important pages
-    # We trigger extraction ONLY if we see these headers
-    target_headers = [
-    # --- 1. Income Statement Variations ---
-    "consolidated statements of operations",
-    "consolidated statement of income",
-    "consolidated statements of income",
-    "statement of earnings",
-    "consolidated statement of comprehensive income",
-    "profit and loss",
-    "income statement",
-    "results of operations",
-
-    # --- 2. Balance Sheet Variations ---
-    "consolidated balance sheets",
-    "consolidated statement of financial position",
-    "balance sheet",
-    "financial position",
-    "statement of financial condition",
-    "assets and liabilities",
-
-    # --- 3. Cash Flow Variations ---
-    "consolidated statements of cash flows",
-    "consolidated statement of cash flows",
-    "cash flow statement",
-    "statement of cash flows",
-    "cash flows",
-
-    # --- 4. Equity (Crucial for Share Counts/Dividends) ---
-    "consolidated statements of stockholders' equity",
-    "consolidated statements of shareholders' equity",
-    "statement of changes in equity",
-    "consolidated statement of equity",
-
-    # --- 5. Key Summaries (Where the "easy" numbers live) ---
-    "our key figures",
-    "financial highlights",
-    "selected financial data",
-    "key performance indicators",
-    "financial summary",
-    "performance highlights",
-    "metric highlights",
-    
-    # --- 6. Specific Data Sections ---
-    "segment information",   # <--- CRITICAL for your 'segment_revenue' field
-    "revenue by geography",
-    "shareholder information"
-]
-    
+    context_pages_text = "" 
     pages_kept = 0
-    
+
     try:
         with pdfplumber.open(pdf_path) as pdf:
             for i, page in enumerate(pdf.pages):
                 text = page.extract_text()
-                if not text: 
-                    continue
+                if not text: continue
                 
-                # Check if this page has one of our target headers
-                # We convert to lower case for case-insensitive matching
-                page_lower = text.lower()
-                if any(header in page_lower for header in target_headers):
-                    print(f"   ✅ Keeping Page {i+1} (Found financial data)")
-                    
-                    # Extract tables specifically from this page
-                    tables = page.extract_tables()
+                if i < 2: context_pages_text += text + "\n"
+
+                score = 0
+                text_lower = text.lower()
+                for kw in keywords:
+                    if kw in text_lower: score += 1
+                
+                tables = page.extract_tables()
+                if tables: score += 5
+                
+                if score >= 6 or i < 4:
                     if tables:
-                        relevant_text += f"\n--- DATA FROM PAGE {i+1} ---\n"
+                        relevant_text += f"\n--- DATA PAGE {i+1} ---\n"
                         for table in tables:
                             for row in table:
                                 clean_row = [str(cell).replace('\n', ' ') if cell else "" for cell in row]
                                 relevant_text += " | ".join(clean_row) + "\n"
-                    
-                    # Also keep raw text for context
-                    relevant_text += text + "\n"
+                    relevant_text += f"\n--- TEXT PAGE {i+1} ---\n{text}\n"
                     pages_kept += 1
-                else:
-                    # Skip marketing/legal pages to save money
-                    pass
                     
     except Exception as e:
-        print(f"❌ Error: {e}")
-        return ""
+        print(f"❌ Error reading PDF: {e}")
+        return "", ""
     
-    print(f"📉 Reduced document from {len(pdf.pages)} pages to {pages_kept} pages.")
-    return relevant_text
+    return relevant_text, context_pages_text
 
-# 3. ASYNC MAIN
-async def main():
-    pdf_path = "/Users/anubhavkayal/Data Scrapping/reportF.pdf"
+# 4. CORE: AI Extraction
+async def process_file(client, pdf_path):
+    filename = os.path.basename(pdf_path)
+    filtered_context, context_pages = get_filtered_text(pdf_path)
     
-    # Get ONLY the important pages
-    filtered_context = get_filtered_text(pdf_path)
+    detected_period = extract_period_from_text(context_pages)
+    print(f"   📅 Detected: {detected_period}")
     
-    if len(filtered_context) < 50:
-        print("❌ CRITICAL: No financial tables found! The specific headers might be named differently in this PDF.")
-        # Fallback: If filter fails, maybe take the first 10 pages?
-        # But for now, let's stop to save money.
-        return
+    if len(filtered_context) < 50: return None
 
-    # Initialize Backboard
-    # CRITICAL: If your key is dead, you MUST get a new one.
-    client = BackboardClient(api_key="espr_Hlape8JgiHiwIEt-Ash9LE55tIyTECHENuUHRAYjlKU") 
+    schema_str = json.dumps(METRICS_SCHEMA, indent=2)
 
-    print("🤖 Creating Assistant...")
-    assistant = await client.create_assistant(
-        name="Financial Auditor",
-        system_prompt="You are an expert financial auditor. Extract metrics from the provided table data. Return JSON only."
-    )
+    system_prompt = """
+    You are a Financial Data Engine.
     
-    thread = await client.create_thread(assistant_id=assistant.assistant_id)
+    TASK: Extract 32 exact metrics for Monte Carlo simulation.
     
-    # Upload smaller context
-    print(f"📤 Uploading filtered context ({len(filtered_context)} chars)...")
-    await client.add_message(
-        thread_id=thread.thread_id,
-        content=f"FINANCIAL STATEMENTS:\n{filtered_context}"
-    )
-
-    extracted_data = {}
-    print("🔍 Extracting metrics (Single Batch Request)...")
-
-    # COST SAVING: Ask for EVERYTHING in ONE request to minimize API calls
-    fields_list = ", ".join([item['metric_name'] for item in metrics_schema])
+    ────────────────────────
+    BANKING MAPPING RULES
+    ────────────────────────
+    1. REVENUE: Sum "Interest Earned" + "Other Income".
+    2. COST OF REVENUE: Use "Interest Expended".
+    3. GROSS PROFIT: Use "Net Interest Income" (NII).
+    4. ADMIN EXPENSE: If "Marketing" is missing, put ALL "Other Operating Expenses" here.
     
-    prompt = f"""
-    Analyze the uploaded financial statements.
-    Extract the following metrics: {fields_list}
-    
-    Return a single JSON object with the keys.
-    If a value is missing, use "N/A".
-    RETURN ONLY JSON.
+    ────────────────────────
+    FORMATTING RULES
+    ────────────────────────
+    1. SCALE: Convert "Lakhs" (*100,000) or "Crores" (*10,000,000) to absolute integers.
+    2. MISSING DATA: Return 0 (Zero). Do NOT use N/A.
+    3. FORMAT: CSV ONLY (metric_name, value).
     """
-    
-    try:
-        response = await client.add_message(
-            thread_id=thread.thread_id,
-            content=prompt
-        )
-        
-        content = getattr(response, 'content', str(response)).strip()
-        # Clean markdown
-        content = content.replace("```json", "").replace("```", "").strip()
-        
-        import json
-        data = json.loads(content)
-        extracted_data = data
-        print("✅ Success!")
-        print(data)
 
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        # Print the raw response to see if it's another billing error
-        if 'content' in locals():
-            print(f"Raw response: {content}")
+    user_message = f"""
+    CONTEXT:
+    {filtered_context[:95000]}
 
-    # Save to CSV
-    headers = [item['metric_name'] for item in metrics_schema]
-    # Ensure all keys exist
-    final_row = {h: extracted_data.get(h, "N/A") for h in headers}
+    SCHEMA:
+    {schema_str}
+
+    INSTRUCTIONS:
+    1. Extract for period: "{detected_period}".
+    2. If "Gross Profit" row is missing, calculate it as (Revenue - Cost of Revenue).
+    3. Output CSV.
+    """
+
+    for attempt in range(3):
+        try:
+            assistant_obj = await client.create_assistant(
+                name="FinEngineV10", 
+                system_prompt=system_prompt
+            )
+            thread = await client.create_thread(assistant_id=assistant_obj.assistant_id)
+            print(f"   🤖 AI Analysis: {filename} ({detected_period})...")
+            
+            response = await client.add_message(
+                thread_id=thread.thread_id,
+                content=user_message
+            )
+            
+            content = getattr(response, 'content', str(response)).strip()
+            content = content.replace("```csv", "").replace("```", "").strip()
+            
+            data = {"period": detected_period, "source_file": filename}
+            
+            f = io.StringIO(content)
+            reader = csv.reader(f)
+            for row in reader:
+                if len(row) >= 2:
+                    metric = row[0].strip()
+                    val = row[1].strip()
+                    val = re.sub(r"[^0-9.-]", "", val) 
+                    
+                    if not val: val = "0"
+                    
+                    if any(m['metric_name'] == metric for m in METRICS_SCHEMA):
+                        data[metric] = float(val)
+
+            return data
+
+        except Exception as e:
+            print(f"   ⚠️ Error (Attempt {attempt+1}): {e}")
+            time.sleep(2)
+
+    return None
+
+# 5. MAIN + PYTHON MATH REPAIR
+async def main():
+    client = BackboardClient(api_key=API_KEY)
     
-    with open('financial_data.csv', 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=headers)
-        writer.writeheader()
-        writer.writerow(final_row)
+    pdf_files = [f for f in os.listdir(PDF_FOLDER_PATH) if f.lower().endswith('.pdf')]
+    print(f"📂 Found {len(pdf_files)} PDF files.")
+    
+    all_results = []
+    
+    for pdf_file in pdf_files:
+        full_path = os.path.join(PDF_FOLDER_PATH, pdf_file)
+        result = await process_file(client, full_path)
         
-    print("DONE! Check financial_data.csv")
+        if result:
+            all_results.append(result)
+            save_to_csv(all_results) # Changed to CSV
+
+def save_to_csv(results):
+    if not results: return
+    schema_cols = [m['metric_name'] for m in METRICS_SCHEMA]
+    columns = ["period"] + schema_cols + ["source_file"]
+    
+    df = pd.DataFrame(results)
+    
+    # 1. Fill Missing with 0
+    for col in columns:
+        if col not in df.columns: df[col] = 0.0
+        
+    # 2. PYTHON MATH REPAIR
+    df['gross_profit'] = df.apply(
+        lambda row: row['revenue_total'] - row['cost_of_revenue'] if row['gross_profit'] == 0 else row['gross_profit'], axis=1
+    )
+    
+    df['operating_expenses_total'] = df.apply(
+        lambda row: (row['employee_costs'] + row['selling_marketing_expense'] + row['general_admin_expense']) 
+        if row['operating_expenses_total'] == 0 else row['operating_expenses_total'], axis=1
+    )
+    
+    df = df[columns]
+    try: df = df.sort_values(by="period")
+    except: pass
+    
+    # --- CHANGED: SAVE AS CSV ---
+    df.to_csv(OUTPUT_FILE, index=False)
+    print(f"   💾 CSV Updated with Math Repair.")
 
 if __name__ == "__main__":
     asyncio.run(main())
